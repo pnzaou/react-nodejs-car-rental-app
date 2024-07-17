@@ -9,7 +9,9 @@ const clientModel = new mongoose.Schema({
     dateExpirationPermis: {type: Date, required: true},
     photoPermis: {type: String, required: true},
     photoPieceID: {type: String, required: true},
-    role: { type: String, default: 'client' }
+    role: { type: String, default: 'client' },
+    created_at: {type: Date, default: Date.now},
+    updated_at: {type: Date}
 })
 
 module.exports = mongoose.model('Client', clientModel)

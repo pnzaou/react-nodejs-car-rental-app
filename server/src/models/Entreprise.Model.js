@@ -8,7 +8,9 @@ const entrepriseModel = new mongoose.Schema({
     description: String,
     logo: String,
     utilisateurId: {type: mongoose.Schema.Types.ObjectId, ref: 'Utilisateur'},
-    entrepriseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Entreprise'}
+    entrepriseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Entreprise'},
+    created_at: {type: Date, default: Date.now},
+    updated_at: {type: Date}
 })
 
 module.exports = mongoose.model('Entreprise', entrepriseModel)
