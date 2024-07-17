@@ -1,0 +1,15 @@
+const mongoose = require('mongoose')
+
+const clientModel = new mongoose.Schema({
+    nomComplet: {type: String, required: true},
+    email: {type:String, required: true, unique: true},
+    motDePasse: {type: String, required: true, minlength: 8},
+    telephone: {type: String, required: true},
+    numPermis: {type: String, required: true},
+    dateExpirationPermis: {type: Date, required: true},
+    photoPermis: {type: String, required: true},
+    photoPieceID: {type: String, required: true},
+    role: { type: String, default: 'client' }
+})
+
+module.exports = mongoose.model('Client', clientModel)
