@@ -7,9 +7,13 @@ const clientModel = new mongoose.Schema({
     telephone: {type: String, required: true},
     numPermis: {type: String, required: true},
     dateExpirationPermis: {type: Date, required: true},
-    photoPermis: {type: String, required: true},
-    photoPieceID: {type: String, required: true},
-    role: { type: String, default: 'client' },
+    photos: [
+        {
+            path: String,
+            filename: String
+        }
+    ],
+    profil: { type: String, default: 'client' },
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date}
 })
