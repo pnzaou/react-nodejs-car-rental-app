@@ -13,7 +13,8 @@ app
     .use(bodyParser.json())
     .use(cors())
     .use(router)
-    .use('/uploads', express.static(path.join(__dirname, 'src/uploads')))
+    .use('/uploads/client', express.static(path.join(__dirname, 'src/uploads/client')))
+    .use('/uploads/marque', express.static(path.join(__dirname, 'src/uploads/marque')))
 
 app.get('/', (req, res) => {
     res.send('<h1>Hello car-rental-api</h1>')

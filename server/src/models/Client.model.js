@@ -9,8 +9,7 @@ const clientModel = new mongoose.Schema({
     dateExpirationPermis: {type: Date, required: true},
     photos: [
         {
-            path: String,
-            filename: String
+            path: String
         }
     ],
     profil: { type: String, default: 'client' },

@@ -22,6 +22,7 @@ const clientSignUp = async (req, res) => {
             {path: req.files['photoPieceID'][0].path, filename: req.files['photoPieceID'][0].filname}
         ]
 
+
         const seal = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(motDePasse, seal)
     
@@ -41,7 +42,7 @@ const clientSignUp = async (req, res) => {
 
         console.log(error.message);
         const msg = 'Erreur lors de l\'inscription'
-        return res.status(500).json({message: msg, erreur: error})
+        return res.status(500).json({message: msg, erreur: error.message})
 
     }
 }
